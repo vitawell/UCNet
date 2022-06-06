@@ -36,7 +36,7 @@ for dataset in test_datasets:
     depth_root = dataset_path + dataset + '/depth/'
     test_loader = test_dataset(image_root, depth_root, opt.testsize)
     for i in range(test_loader.size):
-        print i
+        print(i)
         image, depth, HH, WW, name = test_loader.load_data()
         image = image.cuda()
         depth = depth.cuda()
