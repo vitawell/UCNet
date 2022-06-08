@@ -26,17 +26,20 @@ generator.load_state_dict(torch.load('./models/Model_100_gen.pth'))
 generator.cuda()
 generator.eval()
 
-test_datasets = ['DES', 'LFSD','NJU2K','NLPR','SIP','STERE']
-#test_datasets = ['STERE']
+#test_datasets = ['DES', 'LFSD','NJU2K','NLPR','SIP','STERE']
+test_datasets = ['818']
 
 for dataset in test_datasets:
     save_path = './results/' + dataset + '/'
     if not os.path.exists(save_path):
         os.makedirs(save_path)
 
-    image_root = dataset_path + dataset + '/RGB/'
-    depth_root = dataset_path + dataset + '/depth/'
+    image_root = dataset_path + dataset + '/818rgb/'
+    depth_root = dataset_path + dataset + '/818depth/'
     test_loader = test_dataset(image_root, depth_root, opt.testsize)
+    
+    print('range(test_loader.size)')
+    #range(0, 130)
     for i in range(test_loader.size):
         print(i)
         image, depth, HH, WW, name = test_loader.load_data()
