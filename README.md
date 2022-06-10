@@ -1,3 +1,6 @@
+修改了test.py引用的加载数据函数，rgb图像可以是png后缀。
+
+
 # UCNet (CVPR2020)
 UC-Net: Uncertainty Inspired RGB-D Saliency Detection via Conditional Variational Autoencoders
 
